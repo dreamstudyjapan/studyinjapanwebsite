@@ -61,7 +61,7 @@ export class ContactUsComponent {
   sendEmail(event: Event) {
     event.preventDefault(); // Prevent default form submission behavior
     // Check if the form is invalid or empty
-    // if (this.contactForm.invalid) {
+    if (this.contactForm.invalid) {
       this.snackBar.open('Please fill all required fields correctly.', 'Close', {
         duration: 3000,
         horizontalPosition: 'center',
@@ -77,30 +77,30 @@ export class ContactUsComponent {
   
       this.snackBar.open('Form submitted successfully!', 'Close', config);
       return;
-    // }
+     }
 
     // Send email using EmailJS
     const formData = this.contactForm.value;
 
-    // emailjs.send('service_p97djde', 'template_j7zu8ck', formData, 'comz45qAYvAVz05Lq')
-    //   .then((response) => {
-    //     this.snackBar.open('Message sent successfully!', 'Close', {
-    //       duration: 3000,
-    //       horizontalPosition: 'center',
-    //       verticalPosition: 'top',
-    //       panelClass: ['mat-toolbar', 'mat-primary'],
-    //     });
-    //     this.contactForm.reset();
-    //     this.cdr.detectChanges(); 
-    //   }, (error) => {
-    //     console.error('Error sending email:', error);
-    //     this.snackBar.open('Failed to send message. Please try again.', 'Close', {
-    //       duration: 3000,
-    //       horizontalPosition: 'center',
-    //       verticalPosition: 'top',
-    //       panelClass: ['mat-toolbar', 'mat-warn'],
-    //     });
-    //   });
+    emailjs.send('service_p97djde', 'template_j7zu8ck', formData, 'comz45qAYvAVz05Lq')
+      .then((response) => {
+        this.snackBar.open('Message sent successfully!', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass: ['mat-toolbar', 'mat-primary'],
+        });
+        this.contactForm.reset();
+        this.cdr.detectChanges(); 
+      }, (error) => {
+        console.error('Error sending email:', error);
+        this.snackBar.open('Failed to send message. Please try again.', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass: ['mat-toolbar', 'mat-warn'],
+        });
+      });
   }
 
   // Reset Form (if you need to reset it entirely)
