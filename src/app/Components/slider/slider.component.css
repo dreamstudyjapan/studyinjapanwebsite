@@ -1,0 +1,98 @@
+.owl-carousel .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .owl-carousel .owl-nav .owl-prev {
+    left: -25px;
+  }
+  
+  .owl-carousel .owl-nav .owl-next {
+    right: -25px;
+  }
+  
+  .owl-carousel .owl-dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .owl-carousel .owl-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .owl-carousel .owl-dot.active {
+    background: #333;
+  }
+  
+
+  /* Custom Carousel Styles */
+.owl-carousel .owl-item {
+    position: relative;
+}
+
+.owl-carousel .owl-item img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.owl-carousel .owl-item:first-child img {
+    height: 600px; /* Larger image height for the first slide */
+}
+
+/* Carousel Title Animations */
+.owl-carousel .animated {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.owl-carousel .animated.slideInDown {
+    animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.text-primary {
+    color: #ff9f00;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Button Style */
+.btn-primary, .btn-light {
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff9f00;
+}
+
+.btn-light:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}

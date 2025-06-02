@@ -1,0 +1,9 @@
+.nav-item{
+    cursor: pointer !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #ffffff !important;
+}

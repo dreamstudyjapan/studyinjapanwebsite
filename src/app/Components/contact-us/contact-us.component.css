@@ -1,0 +1,82 @@
+/* Global Responsive Adjustments */
+.container-xxl {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    /* On mobile devices, stack the form fields and make them more compact */
+    .table th,
+    .table td {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 12px 0;
+    }
+    
+    .table th {
+        font-weight: bold;
+        padding-right: 20px;
+    }
+
+    /* Adjust form input widths */
+    .mat-form-field {
+        width: 100% !important;
+    }
+
+    /* Adjust spacing for form fields */
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .d-flex .mat-form-field {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust button size */
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Medium screens: Adjust form layout */
+    .mat-form-field {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Large screens: Form fields and table should be displayed in the standard layout */
+    .mat-form-field {
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        width: auto;
+        padding: 15px 25px;
+    }
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #4caf50 !important; /* Green background for success */
+  }
+  
+  .mat-toolbar.mat-warn {
+    background-color: #f44336 !important; /* Red background for error */
+  }
+
+  .snackbar-top-right {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+  }  

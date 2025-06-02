@@ -1,0 +1,10 @@
+[build]
+  base = "."  # Root directory for the build process
+  publish = "dist/study-in-japan/browser"  # Correct output path
+  command = "ng build --configuration production"  # Updated build command for production
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
