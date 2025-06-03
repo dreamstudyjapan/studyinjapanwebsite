@@ -203,11 +203,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Questions/Comments</th>
+                                    <th>Questions/Comments <span class="label" style="color: #bf0000;">*</span></th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
                                             <textarea matInput rows="4" formControlName="questions"
-                                                placeholder="Enter your questions or comments here"></textarea>
+                                                placeholder="Enter your questions or comments here" required></textarea>
                                             <mat-error
                                                 *ngIf="contactForm.get('questions')?.touched && contactForm.get('questions')?.invalid">
                                                 This field is required.
