@@ -10,6 +10,7 @@ import emailjs from 'emailjs-com';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';  
 
 @Component({
   selector: 'app-contact-us',
@@ -22,7 +23,8 @@ import { ChangeDetectorRef } from '@angular/core';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css'],
@@ -31,6 +33,8 @@ import { ChangeDetectorRef } from '@angular/core';
 export class ContactUsComponent {
   contactForm: FormGroup;
   isSubmitted: boolean = false;
+  loading = false; 
+  
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -79,12 +83,14 @@ export class ContactUsComponent {
       this.snackBar.open('Form submitted successfully!', 'Close', config);
       return;
     }
+     this.loading = true; 
 
     // Send email using EmailJS
     const formData = this.contactForm.value;
 
     emailjs.send('service_p97djde', 'template_j7zu8ck', formData, 'comz45qAYvAVz05Lq')
       .then((response) => {
+         this.loading = false;
         this.snackBar.open('Message sent successfully!', 'Close', {
           duration: 3000,
           horizontalPosition: 'center',
