@@ -52,6 +52,7 @@ export class ContactUsComponent {
       address: ['', Validators.required],
       jlpt: ['', Validators.required],
       interestedCourse:['', Validators.required],
+      questions:['', Validators.required]
     });
 
   }

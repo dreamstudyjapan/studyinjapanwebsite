@@ -3,7 +3,7 @@
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
-            <h1 class="mb-5">Contact For Inquery</h1>
+            <h1 class="mb-5">Contact For Inquiry</h1>
         </div>
         <div class="row g-4">
             <div class="col-12 wow fadeInUp" data-wow-delay="0.5s">
@@ -41,8 +41,10 @@
                                     <th>Name</th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput type="text" formControlName="user_name" placeholder="Enter your name" required />
-                                            <mat-error *ngIf="contactForm.get('user_name')?.touched && contactForm.get('user_name')?.invalid">
+                                            <input matInput type="text" formControlName="user_name"
+                                                placeholder="Enter your name" required />
+                                            <mat-error
+                                                *ngIf="contactForm.get('user_name')?.touched && contactForm.get('user_name')?.invalid">
                                                 Name is required.
                                             </mat-error>
                                         </mat-form-field>
@@ -66,20 +68,26 @@
                                     <td>
                                         <div class="d-flex gap-3 flex-wrap">
                                             <mat-form-field appearance="outline" class="w-30">
-                                                <input matInput type="number" formControlName="dobYear" placeholder="Year" min="1900" max="2025" required />
-                                                <mat-error *ngIf="contactForm.get('dobYear')?.touched && contactForm.get('dobYear')?.invalid">
+                                                <input matInput type="number" formControlName="dobYear"
+                                                    placeholder="Year" min="1900" max="2025" required />
+                                                <mat-error
+                                                    *ngIf="contactForm.get('dobYear')?.touched && contactForm.get('dobYear')?.invalid">
                                                     Year is required.
                                                 </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" class="w-30">
-                                                <input matInput type="number" formControlName="dobMonth" placeholder="Month" min="1" max="12" required />
-                                                <mat-error *ngIf="contactForm.get('dobMonth')?.touched && contactForm.get('dobMonth')?.invalid">
+                                                <input matInput type="number" formControlName="dobMonth"
+                                                    placeholder="Month" min="1" max="12" required />
+                                                <mat-error
+                                                    *ngIf="contactForm.get('dobMonth')?.touched && contactForm.get('dobMonth')?.invalid">
                                                     Month is required.
                                                 </mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" class="w-30">
-                                                <input matInput type="number" formControlName="dobDay" placeholder="Day" min="1" max="31" required />
-                                                <mat-error *ngIf="contactForm.get('dobDay')?.touched && contactForm.get('dobDay')?.invalid">
+                                                <input matInput type="number" formControlName="dobDay" placeholder="Day"
+                                                    min="1" max="31" required />
+                                                <mat-error
+                                                    *ngIf="contactForm.get('dobDay')?.touched && contactForm.get('dobDay')?.invalid">
                                                     Day is required.
                                                 </mat-error>
                                             </mat-form-field>
@@ -96,7 +104,8 @@
                                             <mat-radio-button value="Employed">Employed</mat-radio-button>
                                             <mat-radio-button value="Others">Others</mat-radio-button>
                                         </mat-radio-group>
-                                        <mat-error *ngIf="contactForm.get('occupation')?.touched && contactForm.get('occupation')?.invalid">
+                                        <mat-error
+                                            *ngIf="contactForm.get('occupation')?.touched && contactForm.get('occupation')?.invalid">
                                             Occupation is required.
                                         </mat-error>
                                     </td>
@@ -113,21 +122,25 @@
                                             <mat-radio-button value="n1">N1</mat-radio-button>
                                             <mat-radio-button value="none">None</mat-radio-button>
                                         </mat-radio-group>
-                                        <mat-error *ngIf="contactForm.get('jlpt')?.touched && contactForm.get('jlpt')?.invalid">
+                                        <mat-error
+                                            *ngIf="contactForm.get('jlpt')?.touched && contactForm.get('jlpt')?.invalid">
                                             JLPT Level is required.
                                         </mat-error>
                                     </td>
                                 </tr>
-                                 <!-- Interested Course: (Reactive Form) -->
-                                 <tr>
+                                <!-- Interested Course: (Reactive Form) -->
+                                <tr>
                                     <th>Interested Course</th>
                                     <td>
                                         <mat-radio-group formControlName="interestedCourse" required>
                                             <mat-radio-button value="2 Years">2 Years</mat-radio-button>
-                                            <mat-radio-button value="1 Year and 9 Months">1 Year and 9 Months</mat-radio-button>
-                                            <mat-radio-button value="1 Year and 6 Months">1 Year and 6 Months</mat-radio-button>
+                                            <mat-radio-button value="1 Year and 9 Months">1 Year and 9
+                                                Months</mat-radio-button>
+                                            <mat-radio-button value="1 Year and 6 Months">1 Year and 6
+                                                Months</mat-radio-button>
                                         </mat-radio-group>
-                                        <mat-error *ngIf="contactForm.get('interestedCourse')?.touched && contactForm.get('interestedCourse')?.invalid">
+                                        <mat-error
+                                            *ngIf="contactForm.get('interestedCourse')?.touched && contactForm.get('interestedCourse')?.invalid">
                                             Interested Course is required.
                                         </mat-error>
                                     </td>
@@ -137,8 +150,10 @@
                                     <th>Email address <span class="label" style="color: #bf0000;">*</span></th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput type="email" formControlName="email" placeholder="XXX@XXX.com" required />
-                                            <mat-error *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+                                            <input matInput type="email" formControlName="email"
+                                                placeholder="XXX@XXX.com" required />
+                                            <mat-error
+                                                *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
                                                 Email is required and should be in correct format.
                                             </mat-error>
                                         </mat-form-field>
@@ -146,11 +161,14 @@
                                 </tr>
                                 <!-- Confirm Email -->
                                 <tr>
-                                    <th>Email address (for confirmation) <span class="label" style="color: #bf0000;">*</span></th>
+                                    <th>Email address (for confirmation) <span class="label"
+                                            style="color: #bf0000;">*</span></th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput type="email" formControlName="cmail" required placeholder="XXX@XXX.com" />
-                                            <mat-error *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.invalid">
+                                            <input matInput type="email" formControlName="cmail" required
+                                                placeholder="XXX@XXX.com" />
+                                            <mat-error
+                                                *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.invalid">
                                                 Confirm email is required.
                                             </mat-error>
                                         </mat-form-field>
@@ -161,8 +179,10 @@
                                     <th>Phone number <span class="label" style="color: #bf0000;">*</span></th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput type="text" formControlName="tel" required placeholder="0000000000" />
-                                            <mat-error *ngIf="contactForm.get('tel')?.touched && contactForm.get('tel')?.invalid">
+                                            <input matInput type="text" formControlName="tel" required
+                                                placeholder="0000000000" />
+                                            <mat-error
+                                                *ngIf="contactForm.get('tel')?.touched && contactForm.get('tel')?.invalid">
                                                 Phone number is required.
                                             </mat-error>
                                         </mat-form-field>
@@ -173,9 +193,24 @@
                                     <th>City <span class="label" style="color: #bf0000;">*</span></th>
                                     <td>
                                         <mat-form-field appearance="outline" class="w-100">
-                                            <input matInput type="text" formControlName="address" required placeholder="Enter your address" />
-                                            <mat-error *ngIf="contactForm.get('address')?.touched && contactForm.get('address')?.invalid">
+                                            <input matInput type="text" formControlName="address" required
+                                                placeholder="Enter your address" />
+                                            <mat-error
+                                                *ngIf="contactForm.get('address')?.touched && contactForm.get('address')?.invalid">
                                                 Address is required.
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Questions/Comments</th>
+                                    <td>
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <textarea matInput rows="4" formControlName="questions"
+                                                placeholder="Enter your questions or comments here"></textarea>
+                                            <mat-error
+                                                *ngIf="contactForm.get('questions')?.touched && contactForm.get('questions')?.invalid">
+                                                This field is required.
                                             </mat-error>
                                         </mat-form-field>
                                     </td>
@@ -184,7 +219,8 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary py-3 px-5" type="submit" [disabled]="contactForm.invalid || isSubmitted" style="color: #fff;">Submit</button>
+                        <button class="btn btn-primary py-3 px-5" type="submit"
+                            [disabled]="contactForm.invalid || isSubmitted" style="color: #fff;">Submit</button>
                     </div>
                 </form>
             </div>
