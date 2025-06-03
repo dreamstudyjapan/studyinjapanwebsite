@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route is home
     { path: 'home', component: HomeComponent },
     { path: 'courses-overview', component: CoursesComponent },
-    { path: 'application-Enroll', component: ApplicationEnrollmentComponent },
+    // { path: 'application-Enroll', component: ApplicationEnrollmentComponent },
     { path: 'required-Doc', component: RequiredDocumentComponent },
     { path: 'contact-us', component: ContactUsComponent },
     { path: 'about-us', component: AboutusComponent },
