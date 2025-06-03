@@ -4,6 +4,7 @@ import { CoursesComponent } from './Components/courses/courses.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { ApplicationEnrollmentComponent } from './Components/application-enrollment/application-enrollment.component';
 import { RequiredDocumentComponent } from './Components/required-document/required-document.component';
+import { AboutusComponent } from './Components/aboutus/aboutus.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route is home
@@ -12,4 +13,5 @@ export const routes: Routes = [
     { path: 'application-Enroll', component: ApplicationEnrollmentComponent },
     { path: 'required-Doc', component: RequiredDocumentComponent },
     { path: 'contact-us', component: ContactUsComponent },
+    { path: 'about-us', component: AboutusComponent },
 ];

@@ -77,7 +77,7 @@ export class ContactUsComponent {
   
       this.snackBar.open('Form submitted successfully!', 'Close', config);
       return;
-     }
+    }
 
     // Send email using EmailJS
     const formData = this.contactForm.value;
