@@ -92,10 +92,10 @@ export class ContactUsComponent {
     // Submit to backend
     this.contactService.saveContact(formData).subscribe({
       next: (response) => {
-        console.log('Saved to backend:', response);
+        // console.log('Saved to backend:', response);
   
         // ✅ Show snackbar if status is 200 or response.success = true
-        if (response?.success || response?.status === 200) {
+        // if (response) {
           this.snackBar.open('Your response has been submitted!', 'Close', {
             duration: 3000,
             horizontalPosition: 'center',
@@ -105,7 +105,7 @@ export class ContactUsComponent {
   
           this.contactForm.reset();
           this.cdr.detectChanges();
-        }
+        // }
   
         this.loading = false;
       },
