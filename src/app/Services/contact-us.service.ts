@@ -21,7 +21,7 @@ export interface ContactFormData {
   providedIn: 'root'
 })
 export class ContactUsService {
-  private apiUrl = 'https://study-in-japan-backend.vercel.app/contact/save';
+  private apiUrl = 'https://backend-alpha-eight-64.vercel.app/contact/save';
 
   constructor(private http: HttpClient) {}
 
