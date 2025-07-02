@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-header',
   imports: [RouterModule,CommonModule],
@@ -14,5 +14,12 @@ export class HeaderComponent {
   navigate(value : string){
     this.router.navigate([value]);
   }
-
+  
+  collapseNavbar(): void {
+    const navbar = document.getElementById('navbarCollapse');
+    if (navbar?.classList.contains('show')) {
+      const bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
+      bsCollapse.hide();
+    }
+  }
 }
