@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { ContactUsService } from '../../Services/contact-us.service';
+import { SendEmailService } from '../../Services/send-email.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -40,7 +41,8 @@ export class ContactUsComponent {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private cdr: ChangeDetectorRef,
-    private contactService: ContactUsService
+    private contactService: ContactUsService,
+    private sendEmailService: SendEmailService 
   ) {
     this.contactForm = this.fb.group({
       user_name: ['', Validators.required],
@@ -62,13 +64,12 @@ export class ContactUsComponent {
     event.preventDefault();
   
     if (this.contactForm.invalid) {
-      const config: MatSnackBarConfig = {
+      this.snackBar.open('Please fill all required fields correctly.', 'Close', {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: ['mat-toolbar', 'mat-warn'],
-      };
-      this.snackBar.open('Please fill all required fields correctly.', 'Close', config);
+      });
       return;
     }
   
@@ -91,22 +92,15 @@ export class ContactUsComponent {
   
     // Submit to backend
     this.contactService.saveContact(formData).subscribe({
-      next: (response) => {
-        // console.log('Saved to backend:', response);
-  
-        // ✅ Show snackbar if status is 200 or response.success = true
-        // if (response) {
-          this.snackBar.open('Your response has been submitted!', 'Close', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top',
-            panelClass: ['mat-toolbar', 'mat-primary'],
-          });
-  
-          this.contactForm.reset();
-          this.cdr.detectChanges();
-        // }
-  
+      next: () => {
+        this.snackBar.open('Your response has been submitted!', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass: ['mat-toolbar', 'mat-primary'],
+        });
+        this.contactForm.reset();
+        this.cdr.detectChanges();
         this.loading = false;
       },
       error: (error) => {
@@ -121,19 +115,17 @@ export class ContactUsComponent {
       }
     });
   
-    // Optionally, you can enable this again
-    /*
-    emailjs.send('service_p97djde', 'template_j7zu8ck', formData, 'comz45qAYvAVz05Lq')
-      .then(
-        (response) => {
-          console.log('Email sent:', response);
-        },
-        (error) => {
-          console.error('Email send failed:', error);
-        }
-      );
-    */
+    // ✅ Send email via new backend email API
+    this.sendEmailService.sendEmail(formData).subscribe({
+      next: (res) => {
+        console.log('Email sent:', res);
+      },
+      error: (err) => {
+        console.error('Failed to send email:', err);
+      }
+    });
   }
+  
   
 
   resetForm(): void {
