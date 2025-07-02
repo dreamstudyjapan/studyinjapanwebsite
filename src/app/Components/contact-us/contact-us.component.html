@@ -190,7 +190,7 @@
                 <tr>
                   <th>Phone number <span class="label" style="color: #bf0000;">*</span></th>
                   <td>
-                    <mat-form-field appearance="outline" class="w-100">
+                    <!-- <mat-form-field appearance="outline" class="w-100">
                       <input
                         matInput
                         type="text"
@@ -203,7 +203,37 @@
                       >
                         Phone number is required.
                       </mat-error>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <div class="d-flex gap-2">
+                      <!-- Country Code Dropdown -->
+                      <mat-form-field appearance="outline" class="w-25">
+                        <mat-select formControlName="countryCode" required>
+                          <mat-option value="+91">🇮🇳 +91</mat-option>
+                          <mat-option value="+81">🇯🇵 +81</mat-option>
+                          <mat-option value="+1">🇺🇸 +1</mat-option>
+                          <mat-option value="+44">🇬🇧 +44</mat-option>
+                          <!-- Add more country codes as needed -->
+                        </mat-select>
+                        <mat-error *ngIf="contactForm.get('countryCode')?.touched && contactForm.get('countryCode')?.invalid">
+                          Required
+                        </mat-error>
+                      </mat-form-field>
+                    
+                      <!-- Phone Number Input -->
+                      <mat-form-field appearance="outline" class="flex-grow-1">
+                        <input
+                          matInput
+                          type="text"
+                          formControlName="tel"
+                          placeholder="0000000000"
+                          required
+                        />
+                        <mat-error *ngIf="contactForm.get('tel')?.touched && contactForm.get('tel')?.invalid">
+                          Phone number is required.
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    
                   </td>
                 </tr>
 

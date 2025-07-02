@@ -52,6 +52,7 @@ export class ContactUsComponent {
       occupation: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       cmail: ['', [Validators.required, Validators.email]],
+      countryCode: ['+91', Validators.required], // default to +91
       tel: ['', [Validators.required, Validators.pattern('^[0-9]{10,15}$')]],
       address: ['', Validators.required],
       jlpt: ['', Validators.required],
@@ -83,7 +84,7 @@ export class ContactUsComponent {
       occupation: this.contactForm.value.occupation,
       email: this.contactForm.value.email,
       cmail: this.contactForm.value.cmail,
-      tel: this.contactForm.value.tel,
+      tel: `${this.contactForm.value.countryCode}${this.contactForm.value.tel}`,
       address: this.contactForm.value.address,
       jlpt: this.contactForm.value.jlpt,
       interestedCourse: this.contactForm.value.interestedCourse,

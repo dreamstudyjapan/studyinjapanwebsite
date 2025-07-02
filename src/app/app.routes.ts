@@ -1,17 +1,36 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './Components/home/home.component';
-import { CoursesComponent } from './Components/courses/courses.component';
-import { ContactUsComponent } from './Components/contact-us/contact-us.component';
-import { ApplicationEnrollmentComponent } from './Components/application-enrollment/application-enrollment.component';
-import { RequiredDocumentComponent } from './Components/required-document/required-document.component';
-import { AboutusComponent } from './Components/aboutus/aboutus.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route is home
-    { path: 'home', component: HomeComponent },
-    { path: 'courses-overview', component: CoursesComponent },
-    // { path: 'application-Enroll', component: ApplicationEnrollmentComponent },
-    { path: 'required-Doc', component: RequiredDocumentComponent },
-    { path: 'contact-us', component: ContactUsComponent },
-    { path: 'about-us', component: AboutusComponent },
-];
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+  
+    {
+      path: 'home',
+      loadComponent: () =>
+        import('./Components/home/home.component').then((m) => m.HomeComponent)
+    },
+    {
+      path: 'courses-overview',
+      loadComponent: () =>
+        import('./Components/courses/courses.component').then((m) => m.CoursesComponent)
+    },
+    {
+      path: 'application-Enroll',
+      loadComponent: () =>
+        import('./Components/application-enrollment/application-enrollment.component').then((m) => m.ApplicationEnrollmentComponent)
+    },
+    {
+      path: 'required-Doc',
+      loadComponent: () =>
+        import('./Components/required-document/required-document.component').then((m) => m.RequiredDocumentComponent)
+    },
+    {
+      path: 'contact-us',
+      loadComponent: () =>
+        import('./Components/contact-us/contact-us.component').then((m) => m.ContactUsComponent)
+    },
+    {
+      path: 'about-us',
+      loadComponent: () =>
+        import('./Components/aboutus/aboutus.component').then((m) => m.AboutusComponent)
+    },
+  ];
