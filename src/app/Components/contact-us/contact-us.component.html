@@ -166,25 +166,40 @@
                 </tr>
 
                 <!-- Confirm Email -->
-                <tr>
-                  <th>Email address (for confirmation) <span class="label" style="color: #bf0000;">*</span></th>
-                  <td>
-                    <mat-form-field appearance="outline" class="w-100">
-                      <input
-                        matInput
-                        type="email"
-                        formControlName="cmail"
-                        placeholder="XXX@XXX.com"
-                        required
-                      />
-                      <mat-error
-                        *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.invalid"
-                      >
-                        Confirm email is required.
-                      </mat-error>
-                    </mat-form-field>
-                  </td>
-                </tr>
+              <!-- Confirm Email -->
+<!-- Confirm Email -->
+<tr>
+  <th>
+    Email address (for confirmation)
+    <span class="label" style="color: #bf0000;">*</span>
+  </th>
+  <td>
+    <mat-form-field appearance="outline" class="w-100">
+      <input
+        matInput
+        type="email"
+        formControlName="cmail"
+        placeholder="XXX@XXX.com"
+        required
+      />
+
+      <!-- Error for required/format issues -->
+      <mat-error *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.hasError('required')">
+        Confirm email is required.
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.hasError('email')">
+        Please enter a valid email.
+      </mat-error>
+
+      <!-- Error for email mismatch -->
+      <mat-error *ngIf="contactForm.get('cmail')?.touched && contactForm.get('cmail')?.hasError('emailMismatch')">
+        Email and Confirm Email must match.
+      </mat-error>
+    </mat-form-field>
+  </td>
+</tr>
+
+
 
                 <!-- Phone Number -->
                 <tr>
