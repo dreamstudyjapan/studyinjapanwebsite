@@ -23,6 +23,11 @@ export const routes: Routes = [
       loadComponent: () =>
         import('./Components/required-document/required-document.component').then((m) => m.RequiredDocumentComponent)
     },
+     {
+      path: 'school-introduction',
+      loadComponent: () =>
+        import('./Components/school-introduction/school-introduction.component').then((m) => m.SchoolIntroductionComponent)
+    },
     {
       path: 'contact-us',
       loadComponent: () =>
